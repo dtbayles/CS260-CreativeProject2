@@ -1,39 +1,89 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Bayles Family</title>
+    <title>Creative Project 2</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="/css/cover.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/css/styles.css">
     <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
   </head>
-  <body class="text-center">
-    <div class="container-fluid d-flex flex-column h-100">
+  <body>
+    <div class="container-fluid">
 
-    <!-- HEADER (OPTIONAL) -->
-    <header class="masthead mb-auto">
-    </header>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">JavsScript Apps</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/calendar.html">Memes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/pictures.html">App 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/blog.html">App 3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">App 4</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
 
-    <!-- MAIN CONTENT & LOGIN BUTTON -->
-    <main role="main" class="inner cover">
-      <h1 class="cover-heading">Bayles Family</h1>
-      <p class="lead">
-        <a href="/pages/home.html" class="btn btn-lg btn-secondary">Login</a>
-      </p>
+    <main role="main">
+      <!-- This is the main box on the homepage -->
+      <div class="position-relative overflow-hidden p-3 p-md5 m-md-3 text-center bg-light">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+          <h1 class="display-4 font-weight-normal">Zantippi</h1>
+          <p class="lead font-weight-normal">This page lists the most popular pages/content so you know where to find it.</p>
+        </div>
+      </div>
+
+
+      <div class="d-md-flex m-md-2 my-md-3">
+        <!-- Email box -->
+        <div class="col ml-md-2 pr-md-3">
+          <div class="p-3 bg-light">
+            <h1 class="display-5">Zantippi.com Email</h1>
+            <p class="lead"><a href="#">Click here to access your personal mailbox</a></p>
+          </div>
+        </div>
+        <!-- Calendar box -->
+        <div class="col mr-md-2">
+          <div class="p-3 bg-light">
+            <h1 class="display-5"><a href="/pages/calendar.html">Family Calendar</a></h1>
+            <p class="lead">If it isn't updated... ask Grandpa</p>
+          </div>
+        </div>
+      </div>
+      <!-- Suggestion Box -->
+      <div class="d-md-flex m-md-2 my-md-3">
+        <div class="col px-lg-2">
+          <div class="p-3 bg-light">
+            <h1 class="display-5">Suggestions?</h1>
+            <p class="lead">Send me a text or <a href="a=mailto:dtbayles@gmail.com">email</a> with your idea or bug and I will work on it!</p>
+          </div>
+        </div>
+      </div>
+
     </main>
 
-    <!-- FOOTER (DIFFERENT ON LANDING PAGE) -->
-    <footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p>Drew Bayles &copy 2020
-          <a target="_blank" href="https://github.com/dtbayles/CreativeProject1">
-            <span class="iconify" data-icon="simple-line-icons:social-github" data-inline="false"></span>
-          </a>
-        </p>
+    <!-- FOOTER -->
+    <footer class="card-footer">
+      <div class="container-fluid">
+        <span class="text-muted">Drew Bayles &copy; 2020</span>
+        <a target="_blank" href="https://github.com/dtbayles/CreativeProject2">
+          <span class="iconify" data-icon="simple-line-icons:social-github" data-inline="false"></span>
+        </a>
       </div>
     </footer>
 
