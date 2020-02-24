@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="container-fluid">
@@ -42,39 +44,160 @@
 
     <main role="main">
       <!-- This is the main box on the homepage -->
-      <div class="position-relative overflow-hidden p-3 p-md5 m-md-3 text-center text-white bg-dark">
+      <div class="position-relative overflow-hidden text-center text-white bg-dark row mx-auto">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
-          <h1 class="display-4 font-weight-normal">NBA Statistics</h1>
-          <p class="lead font-weight-normal"></p>
+          <h1 class="display-4 font-weight-normal">NBA Statistics
+          <img class="img-fluid my-auto" style="width: 11%" src="/images/nba_logo.png">
+        </h1>
+          <p class="lead font-weight-normal">Updated information on your favorite teams and players</p>
+        
+          
         </div>
       </div>
 
-      <div class="d-md-flex m-md-2 my-md-3">
-        <!-- Email box -->
-        <div class="col ml-md-2 pr-md-3">
-          <div class="p-3 text-white bg-dark text-center">
-            <h1 class="display-5">Search by Player</h1>
-            <input id="weatherInput" class="form-control form-control-lg my-1" type="text" placeholder="City Name or Zip Code">
-          </div>
-        </div>
-        <!-- Calendar box -->
-        <div class="col mr-md-2">
-          <div class="p-3 text-white bg-dark text-center">
-            <h1 class="display-5">Search by Team</h1>
-            <input id="weatherInput" class="form-control form-control-lg my-1" type="text" placeholder="Team Abbreviation">
+      <!-- Player box -->
+      <div class="d-md-flex ml-md-3 m-md-2 my-md-3">
+        <div class="col pr-md-2">
+          <div class="p-3 text-white bg- text-left">
+            
+            <!-- <input id="playerInput" class="form-control form-control-lg my-1" type="text" placeholder="Player Name"> -->
+            <form class="form-inline">
+              <h1 class="display-5">Search by Player</h1>
+              <div class="form-group">
+                <select class="form-control" id="sel1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+                </div>
+            </form>
           </div>
         </div>
       </div>
+<hr>
+      <!-- Team box -->
+      <div class="d-md-flex ml-md-3 m-md-2 my-md-3">
+        <div class="col mr-md-2 p-3 text-white bg- text-left">
+          
+          
+            <form class="form-inline">
+              <h1 class="display-5 col-md-2">Stats by Team</h1>
+              <div class="input-group mb-3 col-md-3">
+                <input type="text" class="form-control" id="teamInput" placeholder="Team Abbreviation" aria-label="Team Abbreviation" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" id="teamSubmit" type="button">Search</button>
+                </div>
+              </div>
+            </form>
+
+<div id="teamResults">
+              <p>All of the current players:</p>  
+              <input class="form-control" id="myInput" type="text" placeholder="Search..">
+              <br>
+                <table class="table table-bordered table-striped bg-white">
+                  <thead>
+                    <tr>
+                      <th>First</th>
+                      <th>Last</th>
+                      <th>#</th>
+                      <th>Position</th>
+                      <th>Salary</th>
+                      <th>Weight</th>
+                      <th>Height</th>
+                    </tr>
+                  </thead>
+                  <tbody id="myTable">
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+</div>
+            </div>
+          </div>
+        
+      </div>
+
       <!-- Suggestion Box -->
       <div class="d-md-flex m-md-2 my-md-3">
         <div class="col px-lg-2">
-          <div class="p-3 text-white bg-dark">
+          <div class="p-3" style="background-color: silver">
             <h1 class="display-5">Suggestions?</h1>
-            <p class="lead">Send me a text or <a href="a=mailto:dtbayles@gmail.com">email</a> with your idea or bug and I will work on it!</p>
+            <div class="text-white bg-light" id="teamResults">
+              <!--
+              <p>Type something in the input field to search the table for first names, last names or emails:</p>  
+              <input class="form-control" id="myInput" type="text" placeholder="Search..">
+              <br>
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Firstname</th>
+                      <th>Lastname</th>
+                      <th>Email</th>
+                    </tr>
+                  </thead>
+                  <tbody id="myTable">
+                    <tr>
+                      <td>John</td>
+                      <td>Doe</td>
+                      <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Mary</td>
+                      <td>Moe</td>
+                      <td>mary@mail.com</td>
+                    </tr>
+                    <tr>
+                      <td>July</td>
+                      <td>Dooley</td>
+                      <td>july@greatstuff.com</td>
+                    </tr>
+                    <tr>
+                      <td>Anja</td>
+                      <td>Ravendale</td>
+                      <td>a_r@test.com</td>
+                    </tr>
+                  </tbody>
+                </table>
+-->
+            </div>
           </div>
         </div>
       </div>
-
     </main>
 
     <!-- FOOTER -->
@@ -90,9 +213,9 @@
     <!-- Container-Fluid Close -->
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    
+    
     <script text="type/javascript" src="/js/nba.js"></script>
   </body>
 </html>
