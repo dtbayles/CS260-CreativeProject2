@@ -5,45 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Creative Project 2</title>
 
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   </head>
   <body>
-    <div class="container-fluid">
-
-    <!-- NAVBAR 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">JavaScript Apps</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pages/calendar.html">Memes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pages/pictures.html">App 2</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pages/blog.html">App 3</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/index.html">App 4</a>
-            </li>
-          </ul>
-        </div>
-    </nav> 
-    -->
+    <div class="container-fluid h-100 mb-n5">
 
     <main role="main">
-      <!-- This is the main box on the homepage -->
+      <!-- This is the main box -->
       <div class="position-relative overflow-hidden text-center text-white bg-dark row mx-auto">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
           <h1 class="display-4 font-weight-normal">NBA Statistics
@@ -51,173 +25,86 @@
         </h1>
           <p class="lead font-weight-normal">Updated information on your favorite teams and players</p>
         
-          
+          <input type="button" onclick="resetPage()" value="Reset Page">
         </div>
       </div>
 
       <!-- Player box -->
       <div class="d-md-flex ml-md-3 m-md-2 my-md-3">
-        <div class="col pr-md-2">
-          <div class="p-3 text-white bg- text-left">
-            
-            <!-- <input id="playerInput" class="form-control form-control-lg my-1" type="text" placeholder="Player Name"> -->
+        <div class="col mr-md-2 p-3 text-white bg- text-left">
             <form class="form-inline">
-              <h1 class="display-5">Search by Player</h1>
-              <div class="form-group">
-                <select class="form-control" id="sel1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
+              <h1 class="text-center display-5 col-md-6">Player Season Stats</h1>
+              <div class="input-group mb-3 col-md-6">
+                <input type="text" class="form-control" id="playerSeasonInput" placeholder="Season (i.e 2020, 2019)" aria-label="Season" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" id="playerSeasonSubmit" type="button">Search</button>
                 </div>
+                <div class="col-6" id="playerList">
+                  <select class="browser-default custom-select col-sm-8" id="playerOption" disabled>
+                    <option selected>Choose Player</option>
+                  </select>
+                </div>
+              </div>
             </form>
+            <div id="playerResults"></div>
           </div>
-        </div>
       </div>
-<hr>
+    <hr>
       <!-- Team box -->
       <div class="d-md-flex ml-md-3 m-md-2 my-md-3">
         <div class="col mr-md-2 p-3 text-white bg- text-left">
-          
-          
             <form class="form-inline">
-              <h1 class="display-5 col-md-2">Stats by Team</h1>
-              <div class="input-group mb-3 col-md-3">
-                <input type="text" class="form-control" id="teamInput" placeholder="Team Abbreviation" aria-label="Team Abbreviation" aria-describedby="basic-addon2">
+              <h1 class="text-center display-5 col-md-6">Stats by Team</h1>
+              <div class="input-group mb-3 col-md-6">
+                <input type="text" class="form-control" id="teamInput" placeholder="Team Abbreviation (i.e HOU, LAL)" aria-label="Team Abbreviation" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" id="teamSubmit" type="button">Search</button>
                 </div>
               </div>
             </form>
-
-<div id="teamResults">
-  <!--
-              <p>All of the current players:</p>  
-              <input class="form-control" id="myInput" type="text" placeholder="Search..">
-              <br>
-                <table class="table table-bordered table-striped bg-white">
-                  <thead>
-                    <tr>
-                      <th>First</th>
-                      <th>Last</th>
-                      <th>#</th>
-                      <th>Position</th>
-                      <th>Salary</th>
-                      <th>Weight</th>
-                      <th>Height</th>
-                    </tr>
-                  </thead>
-                  <tbody id="myTable">
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-              -->
-</div>
-            </div>
+            <div id="teamResults"></div>
           </div>
-        
       </div>
-
-      <!-- Suggestion Box -->
-      <div class="d-md-flex m-md-2 my-md-3">
-        <div class="col px-lg-2">
-          <div class="p-3" style="background-color: silver">
-            <h1 class="display-5">Suggestions?</h1>
-            <div class="text-white bg-light" id="teamResults">
-              <!--
-              <p>Type something in the input field to search the table for first names, last names or emails:</p>  
-              <input class="form-control" id="myInput" type="text" placeholder="Search..">
-              <br>
-                <table class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                      <th>Firstname</th>
-                      <th>Lastname</th>
-                      <th>Email</th>
-                    </tr>
-                  </thead>
-                  <tbody id="myTable">
-                    <tr>
-                      <td>John</td>
-                      <td>Doe</td>
-                      <td>john@example.com</td>
-                    </tr>
-                    <tr>
-                      <td>Mary</td>
-                      <td>Moe</td>
-                      <td>mary@mail.com</td>
-                    </tr>
-                    <tr>
-                      <td>July</td>
-                      <td>Dooley</td>
-                      <td>july@greatstuff.com</td>
-                    </tr>
-                    <tr>
-                      <td>Anja</td>
-                      <td>Ravendale</td>
-                      <td>a_r@test.com</td>
-                    </tr>
-                  </tbody>
-                </table>
--->
-            </div>
+    <hr>
+      <!-- Season box -->
+      <div class="d-md-flex ml-md-3 m-md-2 my-md-3">
+        <div class="col mr-md-2 p-3 text-white bg- text-left">
+            <form class="form-inline">
+              <h1 class="text-center display-5 col-md-6">Stats by Season</h1>
+              <div class="input-group mb-3 col-md-6">
+                <select class="browser-default custom-select" id="yearOption">
+                  <option selected>Choose Option</option>
+                  <option value="TeamSeasonStats">Team Stats</option>
+                  <option value="Standings">Standings</option>
+                  <option value="AllStars">All Star Players</option>
+                </select>
+                <input type="text" class="form-control" id="seasonInput" placeholder="Season (i.e 2020, 2019)" aria-label="Season" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" id="seasonSubmit" type="button">Search</button>
+                </div>
+              </div>
+            </form>
+            <div id="seasonResults"></div>
           </div>
-        </div>
       </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="card-footer navbar fixed-bottom bg-dark">
+
+        <!-- FOOTER -->
+    <footer class="card-footer navbar bg-dark my-5">
       <div class="container-fluid">
         <span class="text-muted">Drew Bayles &copy; 2020</span>
         <a target="_blank" href="https://github.com/dtbayles/CreativeProject2">
-          <span class="iconify text-muted" data-icon="simple-line-icons:social-github" data-inline="false"></span>
+          <span class="iconify" style="align-content: left;" data-icon="simple-line-icons:social-github" data-inline="false"></span>
         </a>
       </div>
     </footer>
 
-    <!-- Container-Fluid Close -->
+      <!-- Container-Fluid Close -->
     </div>
 
-    
-    
-    
+
+
     <script text="type/javascript" src="/js/nba.js"></script>
   </body>
 </html>
