@@ -27,8 +27,8 @@ document.getElementById("teamSubmit").addEventListener("click", function(event) 
                       '<th>#</th>' +
                       '<th>Position</th>' +
                       '<th>Salary</th>' +
-                      '<th>Weight</th>' +
-                      '<th>Height</th>' +
+                      '<th>Weight (lb)</th>' +
+                      '<th>Height (inches)</th>' +
                     '</tr>' +
                   '</thead>' +
                   '<tbody id="myTable">';
